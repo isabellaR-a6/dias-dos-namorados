@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>leleco meu amor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FF97CF;
+      color: #333;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      color: #7D5B8C;
+    }
+
+    h3 {
+      color: #553971;
+    }
+
+    /* Container para os corações - agora sem posicionamento fixo */
+    #coracoes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* os corações não interferem em cliques */
+      z-index: -1; /* Ficam atrás do conteúdo */
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(-45deg);
+      animation: floatUp 10s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 10px;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(1) rotate(-45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5) rotate(-45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Camada dos corações agora dentro do fluxo normal da página -->
+  <div id="coracoes"></div>
+
+  <script>
+    // Função para criar corações de forma contínua
+    function criarCoracao() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + "vw"; // Corpos aleatórios ao longo da largura
+      heart.style.animationDuration = (Math.random() * 5 + 5) + "s"; // Duração aleatória
+      document.getElementById('coracoes').appendChild(heart);
+
+      // Remove o coração após 10 segundos
+      setTimeout(() => {
+        heart.remove();
+      }, 10000);
+    }
+
+    // Cria corações continuamente a cada 300ms
+    setInterval(criarCoracao, 300);
+  </script>
+
+  <!-- Conteúdo da página -->
+  <font face="Algerian"><h1>--FELIZ DIA DOS NAMORADOS--<3</h1></font><br />
+
+  <img src="🎀.jpg" alt="Foto do Amore" height="400" width="400">
+  <img src="dianamo.gif" alt="gifbrega" height="200" width="400">
+
+  <h3>para meu namorado Que não sabe que existo</h3>
+  <p>Por mais que vc não saiba, eu amo muito vc<3</p>
+
+  <img src="namo.gif" alt="Foto fofa" height="400" width="400">
+
+</body>
+</html>
