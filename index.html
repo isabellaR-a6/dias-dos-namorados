@@ -20,7 +20,7 @@
       color: #553971;
     }
 
-    /* Container para os corações - agora sem posicionamento fixo */
+    /* Container para os corações */
     #coracoes {
       position: absolute;
       top: 0;
@@ -70,12 +70,33 @@
         opacity: 0;
       }
     }
+
+    /* Estilo para o player de áudio */
+    #audio-player {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #FF97CF;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
   </style>
 </head>
 <body>
 
-  <!-- Camada dos corações agora dentro do fluxo normal da página -->
+  <!-- Camada dos corações -->
   <div id="coracoes"></div>
+
+  <!-- Player de áudio -->
+  <div id="audio-player">
+    <audio controls autoplay loop>
+      <!-- Caminho correto para o arquivo de áudio -->
+      <source src="musica.mp3" type="audio/mp3">
+      Seu navegador não suporta a tag de áudio.
+    </audio>
+  </div>
 
   <script>
     // Função para criar corações de forma contínua
@@ -102,7 +123,7 @@
   <img src="🎀.jpg" alt="Foto do Amore" height="400" width="400">
   <img src="dianamo.gif" alt="gifbrega" height="200" width="400">
 
-  <h3>para meu namorado Que não sabe que existo</h3>
+  <h3>Para meu namorado que não sabe que existo</h3>
   <p>Por mais que vc não saiba, eu amo muito vc<3</p>
 
   <img src="namo.gif" alt="Foto fofa" height="400" width="400">
